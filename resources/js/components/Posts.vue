@@ -1,7 +1,9 @@
 <template>
     <div class="card my-4 p-3 mx-auto">
         <div class="card-title my-2">
-            <h3>{{ post.id }} - {{ post.title }}</h3>
+            <router-link class="nav-link" to="/posts/:id">
+                <h3>{{ post.id }} - {{ post.title }}</h3>
+            </router-link>
         </div>
         <div class="card-image text-center my-3">
             <img :src="post.post_image" class="w-50" alt="">

@@ -1,10 +1,13 @@
 <template>
-  <div class="container">
+  <div>
 
     <HeaderContent />
 
+    <!-- qui inserisco i contenuti che voglio visualizzare con le rotte vue router -->
+    <router-view> 
 
-    <MainComponent />
+    </router-view>
+    <!-- qui inserisco i contenuti che voglio visualizzare con le rotte vue router -->
 
   </div>
 </template>
