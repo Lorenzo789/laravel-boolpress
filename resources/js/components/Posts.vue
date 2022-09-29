@@ -11,7 +11,9 @@
         <div class="card-subtitle my-2">
             <span>{{ post.user.name }} - {{ post.post_date }}</span>
             <span v-for="tag in post.tags" :key="tag.id">
-                - {{ tag.name }}
+                <router-link :to="'/tags/' + tag.id">
+                    - {{ tag.name }}
+                </router-link>
             </span>
         </div>
         <div class="card-text my-2">

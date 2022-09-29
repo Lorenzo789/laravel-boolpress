@@ -8,7 +8,7 @@
             />
         </div>
 
-        <div>
+        <div class="container">
             <h2 class="text-center my-4">Tags:</h2>
 
             <Tags v-for="tag in tags" :key="tag.id" 

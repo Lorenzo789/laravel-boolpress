@@ -7,6 +7,7 @@ Vue.use(VueRouter); // Non Indispensabile
 import HomePage from './pages/HomePage';
 import ContactUsPage from './pages/ContactUsPage';
 import ShowSinglePost from './pages/ShowSinglePost';
+import ShowSingleTag from './pages/ShowSingleTag';
 
 const router = new VueRouter({
     mode: 'history',
@@ -25,7 +26,12 @@ const router = new VueRouter({
             path: '/posts/:id',
             name: 'posts-show',
             component: ShowSinglePost,
-        }
+        },
+        {
+            path: '/tags/:id',
+            name: 'tag-show',
+            component: ShowSingleTag,
+        },
     ],
 })
 
