@@ -44,7 +44,7 @@ export default {
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page_url;
                 this.nextPage = response.data.results.next_page_url;
-                console.log(this.posts);
+                this.isLoading = false;
             }).catch((error) => {
                 console.warn(error);
             });
@@ -53,7 +53,6 @@ export default {
             axios.get("/api/tags", {}).then((response) => {
                 // console.log(response.data);
                 this.tags = response.data.data;
-                console.log(this.tags);
             }).catch((error) => {
                 console.warn(error);
             });
