@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Posts :key="post.id" 
+        <PostsCard :key="post.id" 
             :post="post"
         />
     </div>
@@ -8,10 +8,10 @@
 
 <script>
 import axios from 'axios';
-import Posts from '../components/Posts.vue';
+import PostsCard from '../components/PostsCard.vue';
 
 export default {
-    components: { Posts },
+    components: { PostsCard },
     data: function () {
         return {
             post: {},

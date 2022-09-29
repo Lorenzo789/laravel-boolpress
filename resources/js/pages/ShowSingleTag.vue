@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Tags :key="tag.id" 
+        <TagsCard :key="tag.id" 
             :tag="tag" 
         />
     </div>
@@ -8,11 +8,11 @@
 
 <script>
 import axios from 'axios';
-import Tags from '../components/Tags.vue';
+import TagsCard from '../components/TagsCard.vue';
 
 
 export default {
-    components: { Tags },
+    components: { TagsCard },
     data: function () {
         return {
             tag: {},
