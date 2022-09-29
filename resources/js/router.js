@@ -1,5 +1,5 @@
 import Vue from "vue"; // Non Indispensabile
-import  VueRouter  from "vue-router";
+import VueRouter from 'vue-router';
 
 Vue.use(VueRouter); // Non Indispensabile
 
