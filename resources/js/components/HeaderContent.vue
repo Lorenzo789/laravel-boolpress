@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light">
+    <header class="bg-dark">
+        <nav class="navbar navbar-dark navbar-expand-lg container">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">BoolPress</a>
 
@@ -12,10 +12,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                            <router-link class="nav-link" to="/">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
+                            <router-link class="nav-link" to="/posts/:id"></router-link>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"></a>

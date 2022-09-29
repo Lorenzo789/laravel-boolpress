@@ -3,12 +3,17 @@
         <h1 class="text-center my-4">Recent Posts:</h1>
 
         <div class="container">
-            <Posts v-for="post in posts" :key="post.id" :post="post" />
+            <Posts v-for="post in posts" :key="post.id" 
+                :post="post" 
+            />
         </div>
 
         <div>
             <h2 class="text-center my-4">Tags:</h2>
-            <Tags v-for="tag in tags" :key="tag.id" :tag="tag" />
+
+            <Tags v-for="tag in tags" :key="tag.id" 
+                :tag="tag" 
+            />
         </div>
 
     </main>
@@ -20,12 +25,14 @@ import Posts from './Posts.vue';
 import Tags from './Tags.vue';
 
 export default {
+    components: { Tags, Posts },
     data: function () {
         return {
             posts: [],
             currentPage: "",
             nextPage: "",
             lastPage: "",
+            isLoading: true,
             tags: [],
         };
     },
@@ -56,7 +63,6 @@ export default {
         this.getPosts();
         this.getTags();
     },
-    components: { Tags, Posts }
 }
 </script>
 
