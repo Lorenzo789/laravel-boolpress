@@ -15,10 +15,7 @@
                             <router-link class="nav-link" to="/">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/posts/:id"></router-link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"></a>
+                            <router-link class="nav-link" to="/contact">Contact Us</router-link>
                         </li>
                     </ul>
                 </div>
