@@ -22,7 +22,7 @@ export default {
         getPost() {
             const id = this.$route.params.id;
 
-            axios.get('/api/posts/' + id).then((response) => {
+            axios.get(`/api/posts/${id}`).then((response) => {
                 // console.log(response.data);
                 this.post = response.data.results;
                 this.isLoading = false,

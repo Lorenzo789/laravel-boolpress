@@ -2072,7 +2072,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var id = this.$route.params.id;
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/posts/' + id).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/posts/".concat(id)).then(function (response) {
         // console.log(response.data);
         _this.post = response.data.results;
         _this.isLoading = false, console.log(_this.post);
