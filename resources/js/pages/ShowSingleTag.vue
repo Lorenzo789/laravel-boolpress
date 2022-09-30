@@ -1,18 +1,25 @@
 <template>
     <div class="container">
-        <TagsCard :key="tag.id" 
-            :tag="tag" 
-        />
+        <div v-if="isLoading">
+            <LoaderComponent />
+        </div>
+
+        <div v-else>
+            <TagsCard :key="tag.id" 
+                :tag="tag" 
+            />
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
 import TagsCard from '../components/TagsCard.vue';
+import LoaderComponent from '../components/LoaderComponent.vue';
 
 
 export default {
-    components: { TagsCard },
+    components: { TagsCard, LoaderComponent },
     data: function () {
         return {
             tag: {},

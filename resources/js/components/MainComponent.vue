@@ -1,19 +1,24 @@
 <template>
     <main>
         <h1 class="text-center my-4">Recent Posts:</h1>
-
-        <div class="container">
-            <PostsCard v-for="post in posts" :key="post.id" 
-                :post="post" 
-            />
+        <div v-if="isLoading">
+            <LoaderComponent />
         </div>
 
-        <div class="container">
-            <h2 class="text-center my-4">Tags:</h2>
-
-            <TagsCard v-for="tag in tags" :key="tag.id" 
-                :tag="tag" 
-            />
+        <div v-else>
+            <div class="container">
+                <PostsCard v-for="post in posts" :key="post.id" 
+                    :post="post" 
+                />
+            </div>
+    
+            <div class="container">
+                <h2 class="text-center my-4">Tags:</h2>
+    
+                <TagsCard v-for="tag in tags" :key="tag.id" 
+                    :tag="tag" 
+                />
+            </div>
         </div>
 
     </main>
@@ -23,9 +28,10 @@
 import axios from 'axios';
 import PostsCard from './PostsCard.vue';
 import TagsCard from './TagsCard.vue';
+import LoaderComponent from './LoaderComponent.vue';
 
 export default {
-    components: { TagsCard, PostsCard },
+    components: { TagsCard, PostsCard, LoaderComponent },
     data: function () {
         return {
             posts: [],

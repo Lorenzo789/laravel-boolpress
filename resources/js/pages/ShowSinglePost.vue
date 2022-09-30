@@ -1,17 +1,24 @@
 <template>
     <div class="container">
-        <PostsCard :key="post.id" 
-            :post="post"
-        />
+        <div v-if="isLoading">
+            <LoaderComponent />
+        </div>
+
+        <div v-else>
+            <PostsCard :key="post.id" 
+                :post="post"
+            />
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
 import PostsCard from '../components/PostsCard.vue';
+import LoaderComponent from '../components/LoaderComponent.vue';
 
 export default {
-    components: { PostsCard },
+    components: { PostsCard, LoaderComponent },
     data: function () {
         return {
             post: {},

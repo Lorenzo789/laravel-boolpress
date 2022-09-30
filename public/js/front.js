@@ -2071,11 +2071,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_PostsCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostsCard.vue */ "./resources/js/components/PostsCard.vue");
+/* harmony import */ var _components_LoaderComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LoaderComponent.vue */ "./resources/js/components/LoaderComponent.vue");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    PostsCard: _components_PostsCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    PostsCard: _components_PostsCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    LoaderComponent: _components_LoaderComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -2116,11 +2119,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_TagsCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TagsCard.vue */ "./resources/js/components/TagsCard.vue");
+/* harmony import */ var _components_LoaderComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LoaderComponent.vue */ "./resources/js/components/LoaderComponent.vue");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    TagsCard: _components_TagsCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    TagsCard: _components_TagsCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    LoaderComponent: _components_LoaderComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -2272,7 +2278,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container text-center"
+    staticClass: "container text-center my-5"
   }, [_c("img", {
     attrs: {
       src: "https://media.tenor.com/7VN-8uaMPEkAAAAC/really-cat.gif",
@@ -2494,12 +2500,12 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container"
-  }, [_c("PostsCard", {
+  }, [_vm.isLoading ? _c("div", [_c("LoaderComponent")], 1) : _c("div", [_c("PostsCard", {
     key: _vm.post.id,
     attrs: {
       post: _vm.post
     }
-  })], 1);
+  })], 1)]);
 };
 
 var staticRenderFns = [];
@@ -2525,12 +2531,12 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container"
-  }, [_c("TagsCard", {
+  }, [_vm.isLoading ? _c("div", [_c("LoaderComponent")], 1) : _c("div", [_c("TagsCard", {
     key: _vm.tag.id,
     attrs: {
       tag: _vm.tag
     }
-  })], 1);
+  })], 1)]);
 };
 
 var staticRenderFns = [];
