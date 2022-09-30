@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import ContactUsPage from './pages/ContactUsPage';
 import ShowSinglePost from './pages/ShowSinglePost';
 import ShowSingleTag from './pages/ShowSingleTag';
+import SearchInPostsPage from './pages/SearchInPostsPage';
 
 const router = new VueRouter({
     mode: 'history',
@@ -21,6 +22,12 @@ const router = new VueRouter({
             path: '/contact',
             name: 'contact',
             component: ContactUsPage,
+        },
+        // inserire la rotta custom qui perche altrimenti lui pensa che search sia un id se è dichiarato dopo la show
+        {
+            path: '/posts/search',
+            name: 'SearchedPost',
+            component: SearchInPostsPage,
         },
         {
             path: '/posts/:id',

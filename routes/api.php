@@ -21,6 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group( function(){
 
     Route::get('/posts', 'PostController@index');
+    // inserire la rotta custom qui perche altrimenti lui pensa che search sia un id dato che è dichiarato dopo la show
+    Route::get('/posts/search/{title}', 'PostController@searchedPostByTitle');
     Route::get('/posts/{id}', 'PostController@show');
 
     // in questo modo posso cancellare un post dall'api solo ed esclusivamente se siete loggati 
@@ -28,4 +30,5 @@ Route::namespace('Api')->group( function(){
 
     Route::get('/tags', 'TagController@index');
     Route::get('/tags/{id}', 'TagController@show');
+
 });

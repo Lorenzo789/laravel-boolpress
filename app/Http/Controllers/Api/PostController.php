@@ -98,4 +98,23 @@ class PostController extends Controller
     {
         //
     }
+
+    /**
+     * search post by title
+     * 
+     * @param string $title
+     */
+    public function searchedPostByTitle($title)
+    {
+        $title = strtolower($title);
+        $posts = Post::with('user')->where('title', 'LIKE', '%'.$title.'%')->get();
+
+        if ( count($posts) > 0 ) {
+            return response()->json([
+                "response" => true,
+                "count" => count($posts),
+                "results" => $posts,
+            ]); 
+        } else return response('', 404);
+    }
 }
