@@ -2096,7 +2096,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     SearchInPostsByTitle: function SearchInPostsByTitle(needle) {
-      this.getPosts(needle);
+      if (needle !== '') {
+        this.getPosts(needle);
+      }
     }
   },
   components: {
@@ -2291,7 +2293,16 @@ var render = function render() {
         name: "contact"
       }
     }
-  }, [_vm._v("Contact Us")])], 1)])])])])]);
+  }, [_vm._v("Contact Us")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: {
+        name: "SearchedPost"
+      }
+    }
+  }, [_vm._v("Search")])], 1)])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2589,8 +2600,10 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
-    staticClass: "d-flex",
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "d-flex my-4",
     attrs: {
       role: "search"
     }
@@ -2630,11 +2643,15 @@ var render = function render() {
     on: {
       click: function click($event) {
         return _vm.SearchInPostsByTitle(_vm.needle);
+      },
+      keyup: function keyup($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        return _vm.SearchInPostsByTitle(_vm.needle);
       }
     }
-  }, [_vm._v("Search")])]), _vm._v(" "), _c("h1", {
+  }, [_vm._v("\n            Search\n        ")])]), _vm._v(" "), _c("h1", {
     staticClass: "text-center my-4"
-  }, [_vm._v("Recent Posts:")]), _vm._v(" "), _vm.isLoading ? _c("div", [_c("LoaderComponent")], 1) : _c("div", [_c("div", {
+  }, [_vm._v("Here the results of your research:")]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, _vm._l(_vm.posts, function (post) {
     return _c("PostsCard", {
@@ -2643,7 +2660,7 @@ var render = function render() {
         post: post
       }
     });
-  }), 1)])]);
+  }), 1)]);
 };
 
 var staticRenderFns = [];

@@ -1,20 +1,20 @@
 <template>
-    <div>
-      <div class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model.trim="needle">
-          <button class="btn btn-outline-success" type="submit" @click="SearchInPostsByTitle(needle)">Search</button>
-        </div>
-        <h1 class="text-center my-4">Recent Posts:</h1>
-        <div v-if="isLoading">
-            <LoaderComponent />
+    <div class="container">
+        <div class="d-flex my-4" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model.trim="needle">
+            <button class="btn btn-outline-success" type="submit" 
+                @click="SearchInPostsByTitle(needle)" v-on:keyup.enter="SearchInPostsByTitle(needle)"
+            >
+                Search
+            </button>
         </div>
 
-        <div v-else>
-            <div class="container">
-                <PostsCard v-for="post in posts" :key="post.id" 
-                    :post="post" 
-                />
-            </div>
+        <h1 class="text-center my-4">Here the results of your research:</h1>
+
+        <div class="container">
+            <PostsCard v-for="post in posts" :key="post.id" 
+                :post="post" 
+            />
         </div>
     </div>
   </template>
@@ -42,7 +42,9 @@ import PostsCard from '../components/PostsCard.vue';
             });
         },
         SearchInPostsByTitle(needle) {
-            this.getPosts(needle);
+            if (needle !== '') { 
+                this.getPosts(needle);
+            }
         },
     },
     components: { LoaderComponent, PostsCard }
