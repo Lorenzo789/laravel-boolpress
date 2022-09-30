@@ -31,8 +31,9 @@ export default {
             const id = this.$route.params.id;
             // console.log(id);
             axios.get('/api/tags/' + id).then((response) => {
-                console.log(response.data.results);
+                console.log(response.data.results.posts);
                 this.tag = response.data.results;
+                this.isLoading = false;
             }).catch((error) => {
                 console.warn(error);
             });

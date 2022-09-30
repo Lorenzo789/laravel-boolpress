@@ -2141,8 +2141,9 @@ __webpack_require__.r(__webpack_exports__);
       var id = this.$route.params.id; // console.log(id);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/tags/' + id).then(function (response) {
-        console.log(response.data.results);
+        console.log(response.data.results.posts);
         _this.tag = response.data.results;
+        _this.isLoading = false;
       })["catch"](function (error) {
         console.warn(error);
       });
@@ -2421,7 +2422,36 @@ var render = function render() {
         }
       }
     }
-  }, [_c("h2", [_vm._v(_vm._s(_vm.tag.id) + " - " + _vm._s(_vm.tag.name))])])], 1);
+  }, [_c("h2", [_vm._v(_vm._s(_vm.tag.id) + " - " + _vm._s(_vm.tag.name))])]), _vm._v(" "), _vm._l(_vm.tag.posts, function (post) {
+    return _c("div", {
+      key: post.id,
+      staticClass: "card my-4 p-3 mx-auto"
+    }, [_c("div", {
+      staticClass: "card-title my-2"
+    }, [_c("router-link", {
+      staticClass: "nav-link",
+      attrs: {
+        to: {
+          name: "posts-show",
+          params: {
+            id: post.id
+          }
+        }
+      }
+    }, [_c("h3", [_vm._v(_vm._s(post.id) + " - " + _vm._s(post.title))])])], 1), _vm._v(" "), _c("div", {
+      staticClass: "card-image text-center my-3"
+    }, [_c("img", {
+      staticClass: "w-50",
+      attrs: {
+        src: post.post_image,
+        alt: ""
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card-subtitle my-2"
+    }, [_c("span", [_vm._v(_vm._s(post.post_date) + " - " + _vm._s(_vm.tag.name))])]), _vm._v(" "), _c("div", {
+      staticClass: "card-text my-2"
+    }, [_c("p", [_vm._v(_vm._s(post.post_content))])])]);
+  })], 2);
 };
 
 var staticRenderFns = [];
