@@ -1,6 +1,6 @@
 <template>
   <div class="container text-center my-3">
-    <router-link :to="'/tags/' + tag.id">
+    <router-link :to="{ name: 'tag-show', params: {'id' : tag.id} }">
       <h2>{{ tag.id }} - {{ tag.name }}</h2>
     </router-link>
   </div>

@@ -2194,14 +2194,18 @@ var render = function render() {
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "/"
+      to: {
+        name: "home"
+      }
     }
   }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "/contact"
+      to: {
+        name: "contact"
+      }
     }
   }, [_vm._v("Contact Us")])], 1)])])])])]);
 };
@@ -2297,7 +2301,12 @@ var render = function render() {
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "/posts/" + _vm.post.id
+      to: {
+        name: "posts-show",
+        params: {
+          id: _vm.post.id
+        }
+      }
     }
   }, [_c("h3", [_vm._v(_vm._s(_vm.post.id) + " - " + _vm._s(_vm.post.title))])])], 1), _vm._v(" "), _c("div", {
     staticClass: "card-image text-center my-3"
@@ -2347,7 +2356,12 @@ var render = function render() {
     staticClass: "container text-center my-3"
   }, [_c("router-link", {
     attrs: {
-      to: "/tags/" + _vm.tag.id
+      to: {
+        name: "tag-show",
+        params: {
+          id: _vm.tag.id
+        }
+      }
     }
   }, [_c("h2", [_vm._v(_vm._s(_vm.tag.id) + " - " + _vm._s(_vm.tag.name))])])], 1);
 };
