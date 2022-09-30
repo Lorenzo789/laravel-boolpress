@@ -9,6 +9,7 @@ import ContactUsPage from './pages/ContactUsPage';
 import ShowSinglePost from './pages/ShowSinglePost';
 import ShowSingleTag from './pages/ShowSingleTag';
 import SearchInPostsPage from './pages/SearchInPostsPage';
+import PageNotFound from './pages/errors/PageNotFound';
 
 const router = new VueRouter({
     mode: 'history',
@@ -38,6 +39,11 @@ const router = new VueRouter({
             path: '/tags/:id',
             name: 'tag-show',
             component: ShowSingleTag,
+        },
+        {
+            path: '*',
+            name: 'PageNotFound',
+            component: PageNotFound,
         },
     ],
 })
